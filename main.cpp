@@ -2,10 +2,46 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include <unordered_set>
+//#include <unordered_set>
 using namespace std;
 
 int main()
+{
+    ifstream inFile("input.txt");
+    vector<pair<string, string>>necessary;
+    vector<pair<string, string>>doctors;
+    int no_problems, no_doctors;
+    string name, speciality;
+
+    inFile >>  no_problems;
+   
+    for (int i = 0; i <  no_problems; i++)
+    {
+        inFile >> name;
+        inFile >> speciality;
+        necessary.emplace_back(make_pair (name,speciality));
+        //cout << name << ' ' << speciality << '\n';
+    }
+    inFile >> no_doctors;
+
+    for (int i = 0; i < no_doctors; i++)
+    {
+        inFile >> name;
+        inFile >> speciality;
+        doctors.emplace_back(make_pair(name, speciality));
+    }
+    for (auto i = begin(necessary); i != end(necessary); i++)
+    {
+        for (auto i = begin(doctors); i != end(doctors); i++)
+        {
+         
+        }
+    }
+    return 0;
+}
+
+
+/*int main()
 {
     ifstream inFile("input3.txt");
 
@@ -44,7 +80,7 @@ int main()
         }
     }
     return 0;
-}
+}*/
 
 /*int main()
 {
